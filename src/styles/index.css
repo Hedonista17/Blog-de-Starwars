@@ -1,12 +1,37 @@
+@import url('https://fonts.cdnfonts.com/css/star-wars');
+@import url('https://fonts.cdnfonts.com/css/neon-android');
 
+body{
+   background-image:url("https://1.bp.blogspot.com/-_rY0fzfGMac/WER0owh3NEI/AAAAAAAAQPs/QIqaO-Ch_wgop0C9lU5-pXfD1B_UKyuAgCLcB/s1600/T%25C3%25BAnez%2BASUS%2B3664%2BMos%2BEspa.JPG");
+background-size: cover;}
+nav{ background-color: #e0dbd9}
+#logoweb{
+   width: 150px;
+   margin-left: 30px;
+}
+#titulo-navbar{
+   font-family: 'Neon Android', sans-serif;                                             
+  color: black;
+  font-size:30px;
+
+}
+
+h1{
+   font-family: 'Star Wars', sans-serif;
+   color: black;
+}
 /*grid en celdas por columnas el eje horizontal (x) con la propiedad overflow es para la barra y despues el scroll inline para el contenido( que no se desplace)*/
 .carrousel{          
    display:grid;
    gap: var(--size-3);
    grid-auto-flow: column;
    grid-auto-columns: 20%;
-   overflow-x: auto;
+   overflow-x: scroll;
    overscroll-behavior-inline: contain;
+   scrollbar-width:thin;
+}
+#carta{
+   background-color:  black;
 }
 .cartas{
 padding: var(--size-3);

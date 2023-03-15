@@ -7,16 +7,16 @@ import CardVehiculos from "../component/ cardVehiculos.jsx";
 export const Home = () => (
 
 	<div className="container"> 
-		<h1> Personajes</h1>  
+	<div className="row"> 
+		<h1 className="my-3"> Personajes</h1>  
         < CardPeople/>
-		<h1> Planetas</h1> 
+		<h1 className="my-3"> Planetas</h1> 
         <CardPlanetas/>
-		<h1> Vehiculos</h1> 
+		<h1 className="my-3"> Vehiculos</h1> 
 		< CardVehiculos />
+
+	</div>
 
 	</div>
 );
 
-//planetas de agostini xd
-//coche rayo mquenn kachau
-//pj x
