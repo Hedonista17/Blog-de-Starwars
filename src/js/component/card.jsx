@@ -7,13 +7,15 @@ const Card = (props) => {
 
 return (
 
-<div className="card" >
-  <img src="..." className="card-img-top" alt="..."/>
+<div className="card mx-2" >
+  <img id ="imagen-carta" src={props.imagen} className="card-img-top" alt="..."/>
   <div className="card-body">
     <h5 className="card-title">{props.dato1}</h5>
-    
-    <a href="#" className="btn btn-primary">Mas Info!</a>
+    <p>ndjfvngqngqgnq</p>
+    <div className="botones-carta">
+    <button type="button" class="btn btn-outline-primary"> Más Info!</button>
     <button type="button" class="btn btn-outline-warning"><i class="fa-regular fa-heart"></i></button>
+    </div>
   </div>
 </div>
 )

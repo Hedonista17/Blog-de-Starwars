@@ -1,10 +1,21 @@
 
+/*grid en celdas por columnas el eje horizontal (x) con la propiedad overflow es para la barra y despues el scroll inline para el contenido( que no se desplace)*/
+.carrousel{          
+   display:grid;
+   gap: var(--size-3);
+   grid-auto-flow: column;
+   grid-auto-columns: 20%;
+   overflow-x: auto;
+   overscroll-behavior-inline: contain;
+}
+.cartas{
+padding: var(--size-3);
+}
+#imagen-carta{
+   width: 100%;
+}
 
-#carrousel{
-    width: 100%;
-    height: 100%;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    white-space: nowrap;
-    -webkit-overflow-scrolling: touch;
+.botones-carta{
+    display: flex;
+    justify-content: space-between;
 }
