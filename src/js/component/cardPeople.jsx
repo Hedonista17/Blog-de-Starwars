@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "./card.jsx";
-
+import GetInformacion from "/workspace/Blog-de-Starwars/src/js/services/index.js";
 
 const CardPeople =  () => {
 

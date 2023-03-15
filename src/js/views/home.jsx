@@ -4,7 +4,9 @@ import CardPeople from "../component/cardPeople.jsx";
 import CardPlanetas from "../component/cardPlanetas.jsx";
 import CardVehiculos from "../component/ cardVehiculos.jsx";
 
+
 export const Home = () => (
+
 
 	<div className="container"> 
 	<div className="row"> 

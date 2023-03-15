@@ -1,10 +1,16 @@
 import React, { Component } from "react";
 
 export const Footer = () => (
-	<footer className="footer mt-auto py-3 text-center">
-		<p>
-			Made with <i className="fa fa-heart text-danger" /> by{" "}
-			<a href="http://www.4geeksacademy.com">4Geeks Academy</a>
-		</p>
-	</footer>
+	<div className="text-center" id="footer">
+       
+	<div className="card-footer mt-1 mb-0 p-0">
+	 <p className="bg-light bg-opacity-75 mb-0 p-2">Copyright (C) 2023 PrimoLuca Sociedad Limitada - 
+	 All Rights Reserved.
+
+	 <a href="https://github.com/Hedonista17" target="_blank" className="mx-5 text-dark"> By ☞ Andrea Fernandez</a></p>
+	
+   </div>
+
+  </div>
+ 
 );
