@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+
 import Card from "./card.jsx";
 import GetInformacion from "/workspace/Blog-de-Starwars/src/js/services/index.js";
 
@@ -7,11 +8,14 @@ const CardPeople =  () => {
 
   const [listapersonas, setListaPersonas] = useState([]) // para almacenar el listado de personas son un useSatate
 
+
+
   useEffect( async ()=>{ // funcion asincrona, espera aque carge la info de people 
-    const personas = await GetInformacion("people", "");  // fetch(`${URL}/${informacion}/${uid}`.trim()) eso esta en service-index.js yo ya le paso como parametro informacion y en mi funcion GetInformacion mi parametero informacion corresponderá a people en este caso
+    const personas = await GetInformacion("people");  // fetch(`${URL}/${informacion}/${uid}`.trim()) eso esta en service-index.js yo ya le paso como parametro informacion y en mi funcion GetInformacion mi parametero informacion corresponderá a people en este caso
     setListaPersonas(personas.results); // seteo el estado - sera la url de people que esta en la variable personas y acceo a .results (asi es como esta la api construida -- ver en POSTMAN)
   },[]) // por tanto cuando cargue la pagina por defecto ya siempre cargara esta api con los personajes 
 
+  
      return (
     <div className="container"> 
 
@@ -19,6 +23,8 @@ const CardPeople =  () => {
       {listapersonas.map((persona, key) => (
           <div className="cartas">
           <Card
+            category={"people"}
+            id={persona.uid}
             key={key}
             nombre={persona.name}
             imagen="https://media.revistagq.com/photos/5fc4d3e608c92a6bb64b9b83/master/pass/baby-yoda-nombre.jpg"
