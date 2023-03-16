@@ -1,4 +1,4 @@
-
+import React from "react"
 
 
 export const GetInformacion = async (informacion, uid) =>{
@@ -11,3 +11,5 @@ export const GetInformacion = async (informacion, uid) =>{
     } catch(error){ console.log("Error al traer informacion del servidor",error)}
 
 }
+
+export default GetInformacion;

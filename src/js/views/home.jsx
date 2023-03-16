@@ -3,6 +3,7 @@ import "../../styles/home.css";
 import CardPeople from "../component/cardPeople.jsx";
 import CardPlanetas from "../component/cardPlanetas.jsx";
 import CardVehiculos from "../component/ cardVehiculos.jsx";
+import {useNavigate} from "react-router-dom";
 
 
 export const Home = () => (
