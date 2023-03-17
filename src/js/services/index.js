@@ -1,7 +1,7 @@
-import React from "react"
 
 
-export const GetInformacion = async (informacion, uid="") =>{
+
+export const getInformacion = async (informacion, uid="") =>{
     const URL= "https://www.swapi.tech/api"
     try{ 
         const response = await fetch(`${URL}/${informacion}/${uid}`.trim())
@@ -12,4 +12,3 @@ export const GetInformacion = async (informacion, uid="") =>{
 
 }
 
-export default GetInformacion;

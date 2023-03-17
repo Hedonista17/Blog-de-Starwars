@@ -4,12 +4,11 @@ import ScrollToTop from "./component/scrollToTop";
 
 import { Home } from "./views/home.jsx";
 import { Demo } from "./views/demo";
-import { Single } from "./views/single";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
-import InfoDetallada from "./views/infoDetallada.jsx";
+import InfoDetallada from "./views/infoDetallada -People.jsx";
 
 //create your first component
 const Layout = () => {
@@ -23,9 +22,8 @@ const Layout = () => {
         <ScrollToTop>
           <Navbar />
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/demo" element={<Demo />} />
-            <Route path="/:category/:id" element={<InfoDetallada />} />
+            <Route path="/" element={<Home/>} />
+            <Route path="/:category/:id" element={<InfoDetallada/>} />
             <Route
               path="*"
               element={

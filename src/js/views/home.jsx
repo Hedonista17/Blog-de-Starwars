@@ -15,7 +15,7 @@ export const Home = () => (
 		<h1 className="my-3"> Planetas</h1> 
         <CardPlanetas/>
 		<h1 className="my-3"> Vehiculos</h1> 
-		< CardVehiculos />
+		< CardVehiculos  />
 
 	</div>
 
