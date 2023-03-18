@@ -1,10 +1,15 @@
 @import url('https://fonts.cdnfonts.com/css/star-wars');
 @import url('https://fonts.cdnfonts.com/css/neon-android');
 
-body{
-   background-image:url("https://1.bp.blogspot.com/-_rY0fzfGMac/WER0owh3NEI/AAAAAAAAQPs/QIqaO-Ch_wgop0C9lU5-pXfD1B_UKyuAgCLcB/s1600/T%25C3%25BAnez%2BASUS%2B3664%2BMos%2BEspa.JPG");
-background-size: cover;}
-nav{ background-color: #e0dbd9}
+html,body{
+   margin:0;
+   padding: 0;
+}
+body{background: rgb(101,88,64);
+   background: linear-gradient(90deg, rgba(101,88,64,0.9920343137254902) 0%, rgba(226,228,182,1) 50%, rgba(110,109,100,0.9948354341736695) 100%);}
+   
+
+nav{ background-color: #7f7559a2}
 #logoweb{
    width: 150px;
    margin-left: 30px;
@@ -32,6 +37,7 @@ h1{
 }
 #carta{
    background-color:  black;
+
 }
 .cartas{
 padding: var(--size-3);

@@ -1,36 +1,49 @@
-import React, {useState,useEffect} from "react";
-import {getInformacion} from "../services/index.js";
+import React, { useState, useEffect } from "react";
+import { getInformacion } from "../services/index.js";
 import Card from "./card.jsx";
 
 
-const CardPlanetas =  () => {
+const CardPlanetas = () => {
 
   const [listaplanetas, setListaPlanetas] = useState([])
+  const [loading, setLoading] = useState(false)
 
   const getPlanets = async () => {
+    setLoading(true)
     const planetas = await getInformacion("planets")
     setListaPlanetas(planetas.results)
+    setLoading(false)
   }
-  useEffect( () => {getPlanets()}, [])
+  useEffect(() => { getPlanets() }, [])
 
 
 
 
-     return (
-    <div className="container">
+  return (
 
-    <div className="carrousel">
-       
-      { listaplanetas.map((planeta) =>
-      
-      (<div className="cartas">< Card key={planeta.name} nombre={planeta.name} imagen="https://ahorasomos.izertis.com/globetesting/wp-content/uploads/2018/06/maxresdefault.jpg" /> </div>))}
-      
-     
-      </div>
-   
-     
-  </div>
-    )
+    <>
+      {loading ? <div class="d-flex align-items-center">
+        <strong> Be patient you must...</strong>
+        <div class="spinner-border ms-3" role="status" aria-hidden="true"></div>
+      </div> :
+        <div className="container">
+
+          <div className="carrousel">
+
+            {listaplanetas.map((planeta) =>
+
+            (<div className="cartas">< Card category="planets" id={planeta.uid} key={planeta.name} nombre={planeta.name}
+              imagen={planeta.uid == 1 ? 'https://oakthorne.net/wiki/images/Tatooine.jpg' : `https://starwars-visualguide.com/assets/img/planets/${planeta.uid}.jpg`} /> </div>))}
+
+
+          </div>
+
+
+        </div>}
+    </>
+
+
+  )
 }
 
 export default CardPlanetas
