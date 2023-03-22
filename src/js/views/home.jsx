@@ -13,11 +13,11 @@ export const Home = () => (
 	<div className="container"> 
 	<div className="row"> 
 		<h1 className="my-3"> Personajes</h1>  
-        < CardPeople/>
+        < CardPeople />
 		<h1 className="my-3"> Planetas</h1> 
-        <CardPlanetas/>
+        <CardPlanetas  />
 		<h1 className="my-3"> Vehiculos</h1> 
-		< CardVehiculos  />
+		< CardVehiculos />
 
 	</div>
 

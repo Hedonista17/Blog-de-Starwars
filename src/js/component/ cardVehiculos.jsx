@@ -19,9 +19,9 @@ const CardVehiculos = () => {
 
   return (
     <>
-      {loading ? <div class="d-flex align-items-center">
+      {loading ? <div className="d-flex align-items-center">
         <strong> Be patient you must...</strong>
-        <div class="spinner-border ms-3" role="status" aria-hidden="true"></div>
+        <div className="spinner-border ms-3" role="status" aria-hidden="true"></div>
       </div> : <div className="container">
 
         <div className="carrousel">

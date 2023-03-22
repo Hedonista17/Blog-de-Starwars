@@ -19,9 +19,9 @@ export const Navbar = () => {
         Las increibles aventuras de Lucas el Jedi.
       </p>
       <div className="mx-5">
-        <div class="dropdown">
+        <div className="dropdown">
           <button
-            class="btn btn-dark dropdown-toggle"
+            className="btn btn-dark dropdown-toggle"
             type="button"
             data-bs-toggle="dropdown"
             aria-expanded="false"
@@ -31,20 +31,18 @@ export const Navbar = () => {
 
           {store.favoritos.length === 0 ? (
             <ul className="dropdown-menu dropdown-menu-end">
-              <li>
-                <p>Añade tus favoritos 🖤</p>
+              <li className="p-1">
+                <p>Añade tus favoritos!</p>
               </li>
             </ul>
           ) : (
-            <ul className="dropdown-menu dropdown-menu-end">
-              {store.favoritos.map((elemento, key) => (
-                <li key={key}>
-                  {elemento}
-                  <i
-                    className="fa-regular fa-rectangle-xmark"
-                    onClick={() => handleDelete(elemento)}
-                  ></i>
-                </li>
+            <ul className="dropdown-menu dropdown-menu-end p-3">
+              {store.favoritos.map((elemento, index) => (
+                <li  key={index}>
+                  <a> {elemento }</a>
+                   <i onClick={() => handleDelete(elemento)} className="fa-solid fa-xmark mx-2" ></i>
+                  
+                </li> 
               ))}
             </ul>
           )}

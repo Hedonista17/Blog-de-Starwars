@@ -14,7 +14,7 @@ const Card = (props) => {
  const {store,actions} = useContext(Context)
 
  const handleClick = () => {
-  actions.addFavoritos(props.nombre)
+  actions.addFavoritos(props.nombre) // al hacer click en el boton corazon añadirá props.nombre a favoritos ver flux.js linea 7
  }
   const detailPage =
     props.category == "people"
@@ -35,7 +35,7 @@ return (
     <Link to={`${detailPage}/${props.category}/${props.id}`}> 
     <button type="button" className="btn btn-outline-secondary"> Más Info!</button>
     </Link>
-    <button type="button" className="btn btn-outline-danger"><i className="fa-regular fa-heart" onClick={ handleClick}></i></button>
+    <button  onClick={ handleClick} type="button" className="btn btn-outline-danger"><i className="fa-regular fa-heart" ></i></button>
     </div>
   </div>
 </div>
