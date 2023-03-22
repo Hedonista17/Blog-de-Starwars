@@ -1,14 +1,11 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import ScrollToTop from "./component/scrollToTop";
-
 import { Home } from "./views/home.jsx";
-import { Demo } from "./views/demo";
 import injectContext from "./store/appContext";
-
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
-import InfoDetallada from "./views/infoDetallada -People.jsx";
+import Alert from "./component/alert.jsx";
+import detailPeople from "./views/detailPeople.jsx";
 
 //create your first component
 const Layout = () => {
@@ -19,22 +16,15 @@ const Layout = () => {
   return (
     <div>
       <BrowserRouter basename={basename}>
-        <ScrollToTop>
           <Navbar />
           <Routes>
             <Route path="/" element={<Home/>} />
-            <Route path="/:category/:id" element={<InfoDetallada/>} />
-            <Route
-              path="*"
-              element={
-                <div class="alert alert-dark" role="alert">
-                 Aqui no hay nada que ver, que la fuerza te acompañe! 😎 👍
-                </div>
-              }
-            />
+            <Route path="/detailPeople/:category/:id" element={<detailPeople/>} />
+            <Route path="/detailVehicles/:category/:id" element={<detailVehicles/>} />
+            <Route path="/detailPlanets/:category/:id" element={<detailPlanets/>} />
+            <Route path="*" element={<Alert/>}/>
           </Routes>
           <Footer />
-        </ScrollToTop>
       </BrowserRouter>
     </div>
   );
