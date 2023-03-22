@@ -1,43 +1,20 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			demo: [
-				{
-					title: "FIRST",
-					background: "white",
-					initial: "white"
-				},
-				{
-					title: "SECOND",
-					background: "white",
-					initial: "white"
-				}
-			]
+			favoritos:[]
 		},
 		actions: {
-			// Use getActions to call a function within a fuction
-			exampleFunction: () => {
-				getActions().changeColor(0, "green");
+		addFavoritos: (elemento) => {
+		const store = getStore(); 
+        const duplicado = store.favoritos.find((item) => item === elemento); //busca en la lista y devuelve el primer elemento que coincida con item 
+        if (!duplicado) {                                // si no encuentra ninguno ...
+          setStore({favoritos: [...store.favoritos, elemento]});      // favoritos sera entonces una copia( []) y se le añade el elemento 
+        }
 			},
-			loadSomeData: () => {
-				/**
-					fetch().then().then(data => setStore({ "foo": data.bar }))
-				*/
-			},
-			changeColor: (index, color) => {
-				//get the store
-				const store = getStore();
-
-				//we have to loop the entire demo array to look for the respective index
-				//and change its color
-				const demo = store.demo.map((elm, i) => {
-					if (i === index) elm.background = color;
-					return elm;
-				});
-
-				//reset the global store
-				setStore({ demo: demo });
-			}
+		 deleteFavoritos : (elemento) => {
+			const store = getStore();
+			const nuevaLista = store.favoritos.filter((favItem) => favItem !== elemento);
+			setStore({favoritos: nuevaLista});}
 		}
 	};
 };

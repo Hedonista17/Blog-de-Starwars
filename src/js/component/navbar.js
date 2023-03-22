@@ -1,10 +1,15 @@
-import React, {useState} from "react";
+import React, {useContext} from "react";
 import { Link } from "react-router-dom";
 import logoWeb from "../../img/logoWeb.png";
+import { Context } from "../store/appContext";
 
 export const Navbar = () => {
 
-	const [favoritos, setFavoritos] = useState([])
+  const{store,acctions} = useContext(Context)
+  
+  const handleDelete = (elemento) => {
+    acctions.deleteFavoritos(elemento)
+  }
   return (
     <nav className="navbar navbar-light mb-2">
       <Link to="/">
@@ -21,14 +26,28 @@ export const Navbar = () => {
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-           Favoritos {favoritos.length}
+           Favoritos {store.favoritos.length}
           </button>
-          <ul class="dropdown-menu">
-            <li>
-              (Lista vacía)
-            </li>
-            
-          </ul>
+
+          {store.favoritos.length === 0 ? (
+            <ul className="dropdown-menu dropdown-menu-end">
+              <li>
+                <p>Añade tus favoritos 🖤</p>
+              </li>
+            </ul>
+          ) : (
+            <ul className="dropdown-menu dropdown-menu-end">
+              {store.favoritos.map((elemento, key) => (
+                <li key={key}>
+                  {elemento}
+                  <i
+                    className="fa-regular fa-rectangle-xmark"
+                    onClick={() => handleDelete(elemento)}
+                  ></i>
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
       </div>
     </nav>

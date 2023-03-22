@@ -33,3 +33,6 @@ const Layout = () => {
 };
 
 export default injectContext(Layout);
+
+// NOTA:  Respecto a las rutas se crean 3 rutas detalladas, si son personas,planetas o coches pinta en la web la vista detallada en especifico
+// Para ver como está realizada la ruta acudir al componente card.jsx 

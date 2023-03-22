@@ -19,7 +19,7 @@ const CardPeople = () => {
   useEffect(() => { getPeople() }, [])
 
 
-
+ // en cada carrousel como se lo hemos pasado como PROPS le decimos que CATEOGORIA ES =  A  X I LA ID = X.UID referente a como esta montada la API 
   return (
     <>
       {loading ? <div class="d-flex align-items-center">

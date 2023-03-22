@@ -4,27 +4,26 @@ import { getInformacion } from "../services/index.js";
 
 const DetailPeople = () => {
 
-    const [informacion, setInformacion] = useState({})
+    const [informacion, setInformacion] = useState({}) //Por tanto, para imprimir las caracteristicas en la vista ,setInformacion sera nuestras properties y a partir de ahi accedemos a lo que queramos
     const [loading, setLoading] = useState(false)
 
     const params = useParams()
 
     useEffect(async () => {
         setLoading(true)
-        const info = await getInformacion(params.category, params.id);
+        const info = await getInformacion(params.category, params.id); // estos argumentos que se la pasan al metodo  GET de la api son los ya definidos en services
         console.log(info)
-        setInformacion(info.result)
+        setInformacion(info.result.properties) //lo que queremos pintar realmente son sus caracteristicas accedemos entonces dentro del objeto así.
+        // console.log("esto es la info detallada", info.result.properties)
         setLoading(false)
-    }, [params.category, params.id])
+    }, [params.category, params.id]) // los parametros son los que hemos indicado en la ruta del layout 
+
+
 
 
     return (
         <>
-            <Link to="/">
-                <button className="btn btn-dark btn-lg" href="#" role="button">
-                    Volver al Inicio
-                </button>
-            </Link>
+
             {loading ? <div className="container"><div class="d-flex align-items-center">
                 <strong> Be patient you must...</strong>
                 <div class="spinner-border ms-3" role="status" aria-hidden="true"></div>
@@ -38,12 +37,20 @@ const DetailPeople = () => {
                             </div>
                             <div className="col-md-8">
                                 <div className="card-body">
-                                    <h5 className="card-title"> {informacion.description}</h5>
-                                    <p className="card-text"> "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
-                                        esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
-                                        qui officia deserunt mollit anim id est laborum."
+                                    <div className="text-end">
+                                        <Link to="/">
+                                            <i title="Volver al Inicio " className="fa-regular fa-rectangle-xmark fa-2xl"></i>
+                                        </Link>
+                                    </div>
+                                    <h5 className="card-title"> {informacion.name}</h5>
+                                    <p className="card-text">
+                                        <p>Birth Year : {informacion.birth_year}</p>
+                                        <p>Eye Color:{informacion.eye_color}</p>
+                                        <p> Skin Color :{informacion.skin_color}</p>
+                                        <p> Hair Color :{informacion.hair_color}</p>
+                                        <p>Gender :{informacion.gender}</p>
+                                        <p>Height:{informacion.height} cm</p>
+
                                     </p>
                                 </div>
                             </div>
