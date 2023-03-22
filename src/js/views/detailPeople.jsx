@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { getInformacion } from "../services/index.js";
 
-const detailPeople = () => {
+const DetailPeople = () => {
 
     const [informacion, setInformacion] = useState({})
     const [loading, setLoading] = useState(false)
@@ -15,7 +15,7 @@ const detailPeople = () => {
         console.log(info)
         setInformacion(info.result)
         setLoading(false)
-    }, [])
+    }, [params.category, params.id])
 
 
     return (
@@ -56,4 +56,4 @@ const detailPeople = () => {
 
 }
 
-export default detailPeople;
+export default DetailPeople;

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { getInformacion } from "../services/index.js";
 
-const detailPlanets= () => {
+const DetailPlanets= () => {
 
     const [informacion, setInformacion] = useState({})
     const [loading, setLoading] = useState(false)
@@ -56,4 +56,4 @@ const detailPlanets= () => {
 
 }
 
-export default InfoDetallada;
+export default DetailPlanets;
