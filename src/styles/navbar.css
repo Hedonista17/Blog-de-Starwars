@@ -1,0 +1,29 @@
+
+@import url('https://fonts.cdnfonts.com/css/star-wars');
+@import url('https://fonts.cdnfonts.com/css/neon-android');
+
+
+nav{ background-color: #ffffff}
+#logoweb{
+   width: 150px;
+   margin-left: 30px;
+}
+#titulo-navbar{
+font-family: 'Star Wars', sans-serif;                                           
+  color: black;
+  font-size:30px;
+
+}
+
+#boton-navbar ,span{
+    font-family: 'Star Wars', sans-serif;   
+    font-size: 14px;
+}
+#contador{
+    font-family: 'Star Wars', sans-serif; 
+}
+#msg-favoritos{
+    font-family: 'Neon Android';
+    font-size: 12px;
+    padding: 10px;
+}

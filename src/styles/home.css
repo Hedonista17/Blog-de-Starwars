@@ -1,0 +1,64 @@
+@import url('https://fonts.cdnfonts.com/css/star-wars');
+@import url('https://fonts.cdnfonts.com/css/neon-android');
+
+html,body{
+   margin:0;
+   padding: 0;
+}
+body{
+   background-image: url("https://media.istockphoto.com/id/611889232/es/foto/fondo-de-pared-de-patr%C3%B3n-de-rayas-de-habitaci%C3%B3n-interior-moderna.jpg?s=612x612&w=0&k=20&c=pZI4IpqgTVoDFA5F_r2PfmTdZePftveKySdorZ0r1u8=");
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-attachment: fixed;  /*para fijar la imagen al fondo --- estilos del body */
+}
+
+/* ESTILOS PARA EL LOADING DE CARGA */
+#title-loading{                 
+   font-family: 'Neon Android';
+   font-size: 30px;
+}
+
+#loading{
+   margin-top: 350px;
+}
+.spinner-grow{
+   width: 40px;
+   height: 40px;
+}
+
+
+
+h1{
+   font-family: 'Star Wars', sans-serif;
+   color: black;
+}
+/*grid en celdas por columnas el eje horizontal (x) con la propiedad overflow es para la barra y despues el scroll inline para el contenido( que no se desplace)*/
+
+
+
+.carrousel{          
+   display:grid;
+   gap: var(--size-3);
+   grid-auto-flow: column;
+   grid-auto-columns: 20%;
+   overflow-x: scroll;
+   overscroll-behavior-inline: contain;
+   scrollbar-width:thin;
+}
+#carta{
+   background-color:  black;
+
+}
+.cartas{
+padding: var(--size-3);
+}
+#imagen-carta{
+   width: 100%;
+}
+
+.botones-carta{
+    display: flex;
+    justify-content: space-between;
+}
+
+
