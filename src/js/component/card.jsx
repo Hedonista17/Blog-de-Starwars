@@ -27,15 +27,15 @@ const Card = (props) => {
 
 return (
 
-<div id="carta" className="card mx-2" >
+<div id="carta" className="mx-3" >
   <img id ="imagen-carta" src={props.imagen} className="card-img-top" alt="..."/>
   <div className="card-body">
-    <h5 className="card-title text-light">{props.nombre}</h5>
-    <div className="botones-carta">
+    <h5 className="card-title text-light ">{props.nombre}</h5>
+    <div className="botones-carta mt-1">
     <Link to={`${detailPage}/${props.category}/${props.id}`}> 
-    <button type="button" className="btn btn-outline-secondary"> Más Info!</button>
+    <button type="button" className="btn btn-outline-light"> Más Info!</button>
     </Link>
-    <button  onClick={ handleClick} type="button" className="btn btn-outline-danger"><i className="fa-regular fa-heart" ></i></button>
+    <button  onClick={ handleClick} type="button" className="btn btn-outline-light"><i className="fa-regular fa-heart" ></i></button>
     </div>
   </div>
 </div>

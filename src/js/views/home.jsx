@@ -42,7 +42,7 @@ export const Home = () => {
 				<strong id="title-loading"> - - - Be patient you must - - -</strong>
 				<div className="spinner-grow text-dark mx-3" role="status"></div>
 			</div> :
-				<div className="container my-5">
+				<div className="container mt-5">
 					<div class="row my-3">
 						<div class="col">
 							<div className="carrousel my-3">
@@ -80,7 +80,7 @@ export const Home = () => {
 					<div class="row my-3">
 					    <div class="col">
 		
-									<div className="carrousel mt-3 mb-5">
+									<div id="carrousel"className="carrousel mt-3 ">
 
 										{listavehiculos.map((coche, index) => (<div className="cartas"> < Card category="vehicles" id={coche.uid} key={index} nombre={coche.name}
 											imagen={`https://starwars-visualguide.com/assets/img/vehicles/${coche.uid}.jpg`} /></div>
