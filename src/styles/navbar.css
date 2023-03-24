@@ -20,10 +20,11 @@ font-family: 'Star Wars', sans-serif;
     font-size: 14px;
 }
 #contador{
-    font-family: 'Star Wars', sans-serif; 
+    font-family: 'Neon Android';
 }
-#msg-favoritos{
+#msg-favoritos, #element-fav {
     font-family: 'Neon Android';
     font-size: 12px;
     padding: 10px;
 }
+

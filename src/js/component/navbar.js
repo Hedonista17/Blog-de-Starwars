@@ -28,18 +28,20 @@ export const Navbar = () => {
             aria-expanded="false"
           >
              Favoritos
-           <span id="contador" className="mx-2" >{store.favoritos.length}</span>
+           <span id="contador" className="mx-1" >{store.favoritos.length}</span>   
           </button>
           <ul className="dropdown-menu">
            { store.favoritos.length === 0 ? <li id="msg-favoritos"> Marca tus favoritos</li> : store.favoritos.map((elemento, index) => (
               <>
-                <li key={index}>
+             
+                <li id="element-fav" key={index}>
                   {elemento}{" "}
                   <i
                     className="fa-regular fa-rectangle-xmark"
                     onClick={() => handleDelete(index)}
                   ></i>
                 </li>
+                
               </>
             ))}
           </ul>
@@ -48,3 +50,6 @@ export const Navbar = () => {
     </nav>
   );
 };
+
+//Lineas 33 ala 47 : es un ternario... si el numero del listado de favs es 0 (true) -- o si es (false) -- + funcion handleDelete borra por index
+// el index lo coge del mapeo en la linea 34 , realiza un metodo splice por que compara dichos indices y solo borra 1, ver funcion deleteFavoritos en archivo flux.js --actions

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { getInformacion } from "../services/index.js";
+import "../../styles/detailPage.css";
 
 const DetailPeople = () => {
 
@@ -9,14 +10,24 @@ const DetailPeople = () => {
 
     const params = useParams()
 
-    useEffect(async () => {
-        setLoading(true)
-        const info = await getInformacion(params.category, params.id); // estos argumentos que se la pasan al metodo  GET de la api son los ya definidos en services
-        console.log(info)
-        setInformacion(info.result.properties) //lo que queremos pintar realmente son sus caracteristicas accedemos entonces dentro del objeto así.
-        // console.log("esto es la info detallada", info.result.properties)
-        setLoading(false)
-    }, [params.category, params.id]) // los parametros son los que hemos indicado en la ruta del layout 
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                setLoading(true);
+                const info = await getInformacion(params.category, params.id);  // estos argumentos que se la pasan al metodo  GET de la api son los ya definidos en services
+                //console.log(info)
+                setInformacion(info.result.properties); //lo que queremos pintar realmente son sus caracteristicas accedemos entonces dentro del objeto así.
+                // console.log("esto es la info detallada", info.result.properties)
+                setLoading(false);
+
+            } catch (error) {
+                console.log("Error al consultar la informacion", error);
+                setLoading(false);
+
+            }
+        };
+        fetchData();
+    }, [params.category, params.id]);  // los parametros son los que hemos indicado en la ruta del layout 
 
 
 
@@ -24,14 +35,15 @@ const DetailPeople = () => {
     return (
         <>
 
-            {loading ? <div className="container"><div class="d-flex align-items-center">
-                <strong> Be patient you must...</strong>
-                <div class="spinner-border ms-3" role="status" aria-hidden="true"></div>
-            </div> </div> :
-                <div className="container">
+            {loading ? <div id="loading" className="d-flex justify-content-center ">
+                <div className="spinner-grow text-dark mx-3" role="status"></div>
+                <strong id="title-loading"> - - - Be patient you must - - -</strong>
+                <div className="spinner-grow text-dark mx-3" role="status"></div>
+            </div> :
+                <div className="container ">
 
-                    <div className="card my-3">
-                        <div className="row g-0">
+                    <div id="vista-detallada" className="card  my-5">
+                        <div className="row p-2 g-0">
                             <div className="col-md-4">
                                 <img src={`https://starwars-visualguide.com/assets/img/characters/${params.id}.jpg`} className="img-fluid rounded-start" alt="..." />
                             </div>
@@ -39,19 +51,19 @@ const DetailPeople = () => {
                                 <div className="card-body">
                                     <div className="text-end">
                                         <Link to="/">
-                                            <i title="Volver al Inicio " className="fa-regular fa-rectangle-xmark fa-2xl"></i>
+                                            <i id="close-button" title="Volver al Inicio " className="fa-regular fa-rectangle-xmark fa-2xl"></i>
                                         </Link>
                                     </div>
-                                    <h5 className="card-title"> {informacion.name}</h5>
-                                    <p className="card-text">
-                                        <p>Birth Year : {informacion.birth_year}</p>
-                                        <p>Eye Color:{informacion.eye_color}</p>
-                                        <p> Skin Color :{informacion.skin_color}</p>
-                                        <p> Hair Color :{informacion.hair_color}</p>
-                                        <p>Gender :{informacion.gender}</p>
-                                        <p>Height:{informacion.height} cm</p>
+                                    <h5 id="card-titulo" className="card-title"> {informacion.name}</h5>
+                                    <div className="card-text">
+                                        <p> -- Birth Year / {informacion.birth_year} --</p>
+                                        <p> -- Eye Color / {informacion.eye_color} --</p>
+                                        <p> -- Skin Color / {informacion.skin_color} --</p>
+                                        <p> -- Hair Color / {informacion.hair_color} --</p>
+                                        <p> -- Gender / {informacion.gender} --</p>
+                                        <p> -- Height / {informacion.height} cm --</p>
 
-                                    </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>

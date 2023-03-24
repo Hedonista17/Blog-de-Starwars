@@ -1,0 +1,44 @@
+
+@import url('https://fonts.cdnfonts.com/css/star-wars');
+@import url('https://fonts.cdnfonts.com/css/neon-android');
+
+
+
+#vista-detallada{
+    background: #000000;  
+    background: -webkit-linear-gradient(to right,  #000000,  #131212d8);  
+    background: linear-gradient(to right,  #000000, #131212d8); 
+    
+}
+
+
+#close-button{
+    color:#ca0a0ac4;
+}
+#close-button:hover{
+    transform: scale(0.98);
+   box-shadow: 0px 0px 30px 10px #ca0a0ac4;
+}
+
+#card-titulo{
+    font-family: 'Star Wars', sans-serif;
+    color:white;
+    font-size:25px;
+    text-decoration: underline;
+    text-align: center;
+}
+
+.card-text{
+    font-family: 'Neon Android';
+    color:whitesmoke;
+    text-align: center;
+    font-size:20px;
+    margin-top:60px;
+}
+
+#card-planets{
+    margin-top:30px; 
+}
+#card-kachau{
+    margin-top:30px; 
+}

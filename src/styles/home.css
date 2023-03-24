@@ -18,21 +18,15 @@ body{
    font-size: 30px;
 }
 
-#loading{
+#loading{                      
    margin-top: 350px;
 }
-.spinner-grow{
+.spinner-grow{    
    width: 40px;
    height: 40px;
 }
+/* ESTILOS PARA EL LOADING DE CARGA */
 
-
-
-h1{
-   font-family: 'Star Wars', sans-serif;
-   color: black;
-   font-size:14px;
-}
 /*grid en celdas por columnas el eje horizontal (x) con la propiedad overflow es para la barra y despues el scroll inline para el contenido( que no se desplace)*/
 
 .carrousel::-webkit-scrollbar {

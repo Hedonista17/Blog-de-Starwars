@@ -2,6 +2,7 @@ import "../../styles/home.css";
 import React, { useState, useEffect } from "react";
 import { getInformacion } from "../services/index.js";
 import Card from "../component/card.jsx";
+import nano from "../../img/nano-skywalker.jpg";
 
 
 
@@ -43,8 +44,8 @@ export const Home = () => {
 				<div className="spinner-grow text-dark mx-3" role="status"></div>
 			</div> :
 				<div className="container mt-5">
-					<div class="row my-3">
-						<div class="col">
+					<div className="row my-3">
+						<div className="col">
 							<div className="carrousel my-3">
 								{listapersonas.map((persona, index) => (
 									<div className="cartas">
@@ -57,19 +58,20 @@ export const Home = () => {
 										/>
 									</div>
 								))}
+								<Card nombre="El Nano Skywalker" imagen={nano} />
 							</div>
 
 						</div>
 					</div>
-							
-					<div class="row my-3">
-					    <div class="col">
+
+					<div className="row my-3">
+						<div className="col">
 							<div className="carrousel my-3">
 
-										{listaplanetas.map((planeta, index) =>
+								{listaplanetas.map((planeta, index) =>
 
-										(<div className="cartas">< Card category="planets" id={planeta.uid} key={index} nombre={planeta.name}
-											imagen={planeta.uid == 1 ? 'https://oakthorne.net/wiki/images/Tatooine.jpg' : `https://starwars-visualguide.com/assets/img/planets/${planeta.uid}.jpg`} /> </div>))}
+								(<div className="cartas">< Card category="planets" id={planeta.uid} key={index} nombre={planeta.name}
+									imagen={planeta.uid == 1 ? 'https://oakthorne.net/wiki/images/Tatooine.jpg' : `https://starwars-visualguide.com/assets/img/planets/${planeta.uid}.jpg`} /> </div>))}
 
 
 							</div>
@@ -77,14 +79,14 @@ export const Home = () => {
 						</div>
 					</div>
 
-					<div class="row my-3">
-					    <div class="col">
-		
-									<div id="carrousel"className="carrousel mt-3 ">
+					<div className="row my-3">
+						<div className="col">
 
-										{listavehiculos.map((coche, index) => (<div className="cartas"> < Card category="vehicles" id={coche.uid} key={index} nombre={coche.name}
-											imagen={`https://starwars-visualguide.com/assets/img/vehicles/${coche.uid}.jpg`} /></div>
-										))}
+							<div id="carrousel" className="carrousel mt-3 ">
+
+								{listavehiculos.map((coche, index) => (<div className="cartas"> < Card category="vehicles" id={coche.uid} key={index} nombre={coche.name}
+									imagen={`https://starwars-visualguide.com/assets/img/vehicles/${coche.uid}.jpg`} /></div>
+								))}
 
 
 							</div>
@@ -92,7 +94,7 @@ export const Home = () => {
 					</div>
 
 
-					
+
 				</div>
 
 
@@ -101,8 +103,8 @@ export const Home = () => {
 
 
 			}
-                    
-				</>
+
+		</>
 
 
 
