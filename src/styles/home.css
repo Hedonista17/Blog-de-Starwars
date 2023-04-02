@@ -28,7 +28,10 @@ body{
 /* ESTILOS PARA EL LOADING DE CARGA */
 
 /*grid en celdas por columnas el eje horizontal (x) con la propiedad overflow es para la barra y despues el scroll inline para el contenido( que no se desplace)*/
-
+.titulo{
+   font-family: 'Neon Android';
+ margin-left: 20px;
+}
 .carrousel::-webkit-scrollbar {
    width: 8px; 
  }

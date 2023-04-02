@@ -46,6 +46,7 @@ export const Home = () => {
 				<div className="container mt-5">
 					<div className="row my-3">
 						<div className="col">
+						<h1 className="titulo"> PERSONAJES</h1>
 							<div className="carrousel my-3">
 								{listapersonas.map((persona, index) => (
 									<div className="cartas">
@@ -66,6 +67,7 @@ export const Home = () => {
 
 					<div className="row my-3">
 						<div className="col">
+							<h1 className="titulo"> PLANETAS</h1>
 							<div className="carrousel my-3">
 
 								{listaplanetas.map((planeta, index) =>
@@ -81,7 +83,7 @@ export const Home = () => {
 
 					<div className="row my-3">
 						<div className="col">
-
+						<h1 className="titulo"> VEHICULOS</h1>
 							<div id="carrousel" className="carrousel mt-3 ">
 
 								{listavehiculos.map((coche, index) => (<div className="cartas"> < Card category="vehicles" id={coche.uid} key={index} nombre={coche.name}
